@@ -1,0 +1,45 @@
+const BASE_URL = 'https://textngprod.herokuapp.com/api/v1/';
+// const BASE_URL = 'http://192.168.12.40:3000/api/v1/';
+const CABLE_BASE_URL = 'https://textngprod.herokuapp.com/';
+
+const ENDPOINTS = {
+  REGISTER: 'users',
+  LOGIN: 'users/sign_in',
+  SOCIAL_LOGIN: 'social_login',
+  FORGOT_PASS: 'user/forgot_password',
+  RESEND_OTP: 'user/verify_otp/resend_otp_signup',
+  RESET_PASS: 'user/reset_password',
+  LOGOUT: 'users/sign_out',
+  ACCESS_TOKEN: 'get_access_token',
+  VERIFY_OTP: 'user/verify_otp_email',
+  PROFILE: `users`,
+  EMAIL_PRFOILE: 'user',
+  TEXTNG_NUMBER: 'text_ng_number',
+  GET_PROFILE: 'user/get_user',
+  UPDATE_STATUS: 'user/update_profile_status',
+  CONTACT_CONST: 'contact',
+  THEME_CONST: 'theme',
+  CARD_CONST: 'user/card',
+  CHECKOUT_CONST: 'user/checkout',
+  GROUP_CONST: 'group',
+  BANK_CONST: 'banks',
+  SETTINGS: 'settings',
+  TRANSACTION: 'transactions',
+  STRIPE_CONNECT: 'stripe_connect',
+  ALLLOGS: 'all_call_history',
+  RECENTLOGS: 'recent_call_history',
+  BLOCKUSER: '',
+  CLEARLOGS: '',
+  UPDATEUSER: 'users/update',
+  VIDEO_CALL_SERVICE: 'video_call',
+  AUDIO_CALL_SERVICE: 'audio_call',
+  CALL_SERVICE: 'video_call',
+  AUDIO_CALL_HISTORY: 'audio_call_history',
+  VIDEO_CALL_HISTORY: 'video_call_history',
+  TRANSACTION_HISTORY: 'transaction_history',
+  REMOVE_AUDIO_CALL_LOG: 'remove_audio_call_log',
+  REMOVE_VIDEO_CALL_LOG: 'remove_video_call_log',
+  REMOVE_ANY_CALL_LOG: 'remove_any_call_log',
+};
+
+export {BASE_URL, ENDPOINTS, CABLE_BASE_URL};

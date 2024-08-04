@@ -1,0 +1,54 @@
+diff --git a/node_modules/@react-native-community/art/ios/ARTNode.m b/node_modules/@react-native-community/art/ios/ARTNode.m
+index b75a4ee..876b981 100644
+--- a/node_modules/@react-native-community/art/ios/ARTNode.m
++++ b/node_modules/@react-native-community/art/ios/ARTNode.m
+@@ -9,6 +9,8 @@
+ 
+ #import "ARTContainer.h"
+ 
++#import "RCTConvert+ART.h"
++
+ @implementation ARTNode
+ 
+ - (void)insertReactSubview:(UIView *)subview atIndex:(NSInteger)atIndex
+@@ -79,7 +81,9 @@ - (void)renderContentTo:(CGContextRef)context {
+   CGContextSaveGState(context);
+   CGContextConcatCTM(context, self.transform);
+   CGContextSetAlpha(context, self.opacity);
+-  CGContextSetShadowWithColor(context, self.shadow.offset, self.shadow.blur, self.shadow.color.CGColor);
++  UIColor *color = [UIColor colorWithCGColor:[RCTConvert CGColor:@(self.shadow.color)]];
++  color = [color colorWithAlphaComponent:self.shadow.alpha];
++  CGContextSetShadowWithColor(context, self.shadow.offset, self.shadow.blur, color.CGColor);
+ }
+ 
+ - (void)renderLayerTo:(CGContextRef)context
+diff --git a/node_modules/@react-native-community/art/ios/ARTShadow.h b/node_modules/@react-native-community/art/ios/ARTShadow.h
+index 2aa5b48..fcc5dce 100644
+--- a/node_modules/@react-native-community/art/ios/ARTShadow.h
++++ b/node_modules/@react-native-community/art/ios/ARTShadow.h
+@@ -8,5 +8,6 @@
+ typedef struct {
+   CGSize offset;
+   CGFloat blur;
+-  UIColor* color;
++  CGFloat alpha;
++  CGFloat color;
+ } ARTShadow;
+diff --git a/node_modules/@react-native-community/art/ios/RCTConvert+ART.m b/node_modules/@react-native-community/art/ios/RCTConvert+ART.m
+index cbcfdcd..9f1bf97 100644
+--- a/node_modules/@react-native-community/art/ios/RCTConvert+ART.m
++++ b/node_modules/@react-native-community/art/ios/RCTConvert+ART.m
+@@ -165,11 +165,9 @@ + (ARTShadow)ARTShadow:(id)json
+ {
+   NSArray *arr = [self NSArray:json];
+   
+-  UIColor *color = [UIColor colorWithCGColor:[self CGColor:[arr objectAtIndex:0]]];
+-  color = [color colorWithAlphaComponent:[[arr objectAtIndex:1] floatValue]];
+-  
+   return (ARTShadow){
+-    .color = color,
++    .color = [[arr objectAtIndex:0] doubleValue],
++    .alpha = [[arr objectAtIndex:1] floatValue],
+     .blur = [[arr objectAtIndex:2] floatValue],
+     .offset = (CGSize){
+       .width = [[arr objectAtIndex:3] floatValue],

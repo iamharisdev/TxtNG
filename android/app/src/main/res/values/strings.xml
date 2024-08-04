@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TextNG</string>
+
+<string name="facebook_app_id">1420138071803063</string>
+<string name="fb_login_protocol_scheme">fb1420138071803063</string>
+<string name="facebook_client_token">8385a0f10135c9bbbc7e796d136d2f5d</string>
+
+
+</resources>

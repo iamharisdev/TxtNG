@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "878382848452",
+    "project_id": "textng-ab6ec",
+    "storage_bucket": "textng-ab6ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878382848452:android:bf3e4202c80e58c7b86c91",
+        "android_client_info": {
+          "package_name": "com.textng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878382848452-o8boq0i0l0keaph9eab5dlf0vr6akf02.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.textng",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "878382848452-5jsu1q5gk4ung7g88bfqlqcidspe43iv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAly3btylq5lHHXgcYB3cqNbu-wQjRWaM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878382848452-5jsu1q5gk4ung7g88bfqlqcidspe43iv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "878382848452-fa3salipe5vm4lkh5fuour92vhi09fr1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.app.TextNG"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
